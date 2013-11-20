@@ -1,0 +1,29 @@
+--- sqliteodbc-0.995/sqlite3odbc.c.orig	2013-11-20 14:11:31.000000000 +0100
++++ sqliteodbc-0.995/sqlite3odbc.c	2013-11-20 14:12:23.000000000 +0100
+@@ -1391,7 +1391,7 @@
+ 	goto retrieve;
+     }
+     while (sql && *sql && (rc == SQLITE_OK ||
+-			   (rc == SQLITE_SCHEMA && (++nretry) < 2))) {
++			   (rc == SQLITE_SCHEMA && (++nretry) < 100))) {
+ 	int ncol;
+ 
+ 	tres.stmt = NULL;
+@@ -4369,7 +4369,7 @@
+ 		    s3stmt = NULL;
+ 		}
+ 	    }
+-	} while (rc == SQLITE_SCHEMA && (++nretry) < 2);
++	} while (rc == SQLITE_SCHEMA && (++nretry) < 100);
+ 	dbtracerc(d, rc, NULL);
+ 	if (rc != SQLITE_OK) {
+ 	    if (s3stmt) {
+@@ -16682,7 +16682,7 @@
+ 		    s3stmt = NULL;
+ 		}
+ 	    }
+-	} while (ret == SQLITE_SCHEMA && (++nretry) < 2);
++	} while (ret == SQLITE_SCHEMA && (++nretry) < 100);
+ 	dbtracerc(d, ret, NULL);
+ 	if (ret != SQLITE_OK) {
+ 	    if (s3stmt) {
