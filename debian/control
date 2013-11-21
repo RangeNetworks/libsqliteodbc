@@ -6,6 +6,7 @@ Standards-Version: 3.7.2
 Section: libs
 
 Package: range-libsqliteodbc
+Provides: libsqliteodbc
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}

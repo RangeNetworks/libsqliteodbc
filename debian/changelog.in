@@ -1,4 +1,4 @@
-range-libsqliteodbc (@VER_INFO@-1) unstable; urgency=low
+range-libsqliteodbc (@VER_INFO@-2) unstable; urgency=low
 
   * automatically recreated by configure
 
