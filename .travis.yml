@@ -2,7 +2,7 @@ language: cpp
 compiler: gcc
 
 #before_install:
-# - sudo apt-get install -qq libxyz
+ - sudo apt-get install -qq cdbs libsqlite-dev unixodbc-dev
 
 #install:
 #  - sh bootstrap.sh
