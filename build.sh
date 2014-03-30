@@ -37,4 +37,5 @@ sayAndDo tar zxf sqliteodbc-$VERSION.tar.gz
 sayAndDo cp debian/* sqliteodbc-$VERSION/debian/
 sayAndDo patch -p0 < add_retries.patch
 sayAndDo cd sqliteodbc-$VERSION
-sayAndDo dpkg-buildpackage
+sayAndDo dpkg-buildpackage -us -uc
+
